@@ -1,4 +1,4 @@
-//import './stylesheets/css.scss'
+import '../public/stylesheets/todoList.scss';
 import React from 'react';
 import {
 	render

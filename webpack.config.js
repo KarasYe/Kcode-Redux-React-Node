@@ -1,16 +1,16 @@
 //webpack.config.js
-var webpack = require('webpack');
+const webpack = require('webpack');
 
 module.exports = {
-    devtool: 'eval-source-map', //Source Maps,这里选择eval-source-map
+    devtool: 'eval-source-map',
     entry: ['webpack/hot/dev-server', __dirname + '/views/main.js'],
     output: {
-        path: __dirname + '/public/build',
+        path: __dirname + '/build',
         filename: 'bundle.js'
     },
 
     module: {
-        //loaders加载器
+        //loaders
         loaders: [{
             test: /\.(js|jsx)$/,
             exclude: /node_modules/,
@@ -25,6 +25,15 @@ module.exports = {
     },
 
     plugins: [
-        new webpack.HotModuleReplacementPlugin() //HotModuleReplacement
+        new webpack.HotModuleReplacementPlugin(), //HotModuleReplacement
     ],
+
+    devServer: {
+        contentBase: './',
+        colors: true,
+        historyApiFallback: true,
+        inline: true,
+        port: 8080,
+        process: true,
+    }
 };
