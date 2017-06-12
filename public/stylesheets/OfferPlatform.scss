@@ -1,0 +1,331 @@
+// Place all the styles related to the Offer controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  background-color: #ffffff;
+}
+.hub-container {
+  padding-top: 45px;
+  position: relative;
+}
+
+.section-container {
+  position: relative;
+  width: 100%;
+  .welcome-header {
+    margin-bottom: 40px;
+    h1{
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  .search-form {
+    width: 100%;
+    text-align: center;
+    .selection a{
+      text-transform: none !important;
+    }
+  }
+  .look-for, .input-container {
+    display: block;
+    margin: auto;
+    width: 100%;
+  }
+}
+
+.icon-general-checkmark-selected-state {
+  top: 14px !important;
+}
+
+.input-container {
+  .desktop-date-picker input {
+    border: solid 1px rgb(195, 195, 195);
+  }
+  .input-wrap.wrap-wedding-location {
+    ul {
+      border-bottom: 1px solid rgb(195, 195, 195);
+    }
+  }
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu.bottom {
+  margin-top: -2px;
+}
+
+/* ==== DESKTOP ==== */
+@media (min-width: 769px) {
+  .hub-container:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 420px;
+    //background-image: url(https://www.xoedge.com/sitelets/new-offer-platform/bg-top.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #offer-recommend-box{
+    margin-top: 90px;
+    .no-available-copy{
+      width: 900px;
+      margin: 0 auto 33px;
+    }
+  }
+  .section-container {
+    width: 1260px;
+    margin: auto;
+    .welcome-header {
+      padding: 0 10px;
+    }
+    .page-info{
+      .welcome-context {
+        text-align: center;
+        margin-bottom: 0;
+        span{
+          display: block;
+        }
+      }
+    }
+    .recommend-item{
+      margin-bottom: 8px;
+      height: 325px;
+    }
+    .bottom-copy {
+      font-size: 15px;
+      padding: 0 10px;
+      text-align: center;
+      span{
+        margin-bottom: 5px;
+        display: block;
+      }
+    }
+    hr{
+      margin-top: 37px;
+      margin-bottom: 57px;
+    }
+    .recommend-vendor-show{
+      margin-right: -10px;
+      margin-left: -10px;
+    }
+    .icon.icon-general-calendar {
+      font-size: 20px;
+    }
+    .search-form {
+      width: 100%;
+      h1 {
+        margin-bottom: 40px;
+      }
+      .selection {
+        margin: 60px auto 18px;
+        a {
+          min-width: 140px;
+        }
+        .default-anchor {
+          background-color: rgb(230, 230, 230);
+        }
+      }
+      .h-mobile {
+        display: none;
+      }
+
+      .input-container {
+        width: 100%;
+        text-align: center;
+        .input-wrap {
+          display: inline-block;
+          position: relative;
+          vertical-align: middle;
+          input, button, form, .btn-group {
+            width: 100%;
+            height: 34px;
+          }
+          .required-date-flash, .required-location-flash, .required-category-flash {
+            position: absolute;
+            display: none;
+            min-width: 250px;
+            height: auto;
+            top: 35px;
+            p {
+              text-align: left;
+              font-family: 'Gotham A', 'Gotham B';
+              font-weight: 400;
+              font-style: normal;
+              font-size: 10px;
+              line-height: 10px;
+              color: #FA6466;
+            }
+          }
+        }
+
+        .search-btn{
+          width: 134px;
+          height: 36px;
+          .btn-primary{
+            border-radius: 2px;
+            background-color: #eb776a;
+            padding: 14px 13px;
+          }
+          input{
+            height: 36px;
+            font-size: 14px;
+            letter-spacing: 0.4px;
+            text-transform: none;
+          }
+        }
+
+      }
+    }
+    .page-info.page-offers .input-wrap.btn-group.drop-down,
+    .page-info.page-offers .input-wrap.btn-group.drop-down2,
+    .page-info.page-offers .wrap-wedding-location{
+      width: 365px !important;
+      margin-right: 18px;
+    }
+    .page-info.page-events .input-wrap.btn-group.drop-down,
+    .page-info.page-events .input-wrap.btn-group.drop-down2,
+    .page-info.page-events .input-wrap.desktop-date-picker,
+    .page-info.page-events .input-wrap.wrap-wedding-location{
+      width: 250px !important;
+      margin-right: 18px;
+    }
+  }
+}
+
+/* ==== MOBILE ==== */
+@media (max-width: 768px) {
+  .hub-container{
+    padding-top: 26px;
+    background-image: none;
+  }
+  .section-container{
+    width: auto;
+  }
+  #offer-recommend-box{
+    margin-top: 29px;
+  }
+  .section-container{
+    width: 100%;
+    .recommend-content-wrap{
+      .no-available-copy{
+        margin-bottom: 60px;
+        padding: 0 10px;
+      }
+    }
+    .welcome-header {
+      margin-bottom: 18px;
+      padding: 0 10px;
+    }
+    .page-info{
+      padding: 0 10px;
+      .welcome-context {
+        text-align: center;
+        span{
+          display: inline-block;
+        }
+      }
+    }
+    #recommend-verdor-show-wrap{
+      max-width: 640px;
+      margin: auto;
+      .recommend-item{
+        float: none !important;
+        display: inline-block;
+        width: 320px;
+        vertical-align: top;
+      }
+    }
+    .bottom-copy {
+      font-size: 15px;
+      padding: 0 10px;
+      text-align: center;
+      span{
+        margin-bottom: 5px;
+        display: block;
+      }
+    }
+    hr{
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    .search-form {
+      width: 100%;
+      .selection {
+        margin: 22px auto 18px;
+        width: 90%;
+        a {
+          min-width: 100px;
+        }
+        .default-anchor {
+          background-color: rgb(230, 230, 230);
+        }
+      }
+      .h-desktop {
+        display: none;
+      }
+      .h-mobile {
+        h1 {
+          margin: 36px auto;
+        }
+      }
+
+      .input-container {
+        width: 100%;
+        text-align: center;
+        .input-wrap {
+          display: inline-block;
+          position: relative;
+          vertical-align: middle;
+          width: 90%;
+          margin-bottom: 18px;
+          #category-value {
+            width: 100%;
+            min-width: 205px;
+          }
+          input, button {
+            width: 100% !important;
+          }
+          .desktop-date-picker {
+            display: none;
+          }
+          .required-date-flash, .required-location-flash, .required-category-flash {
+            position: absolute;
+            display: none;
+            width: 100%;
+            height: auto;
+            top: 35px;
+            p {
+              text-align: left;
+              font-family: 'Gotham A', 'Gotham B';
+              font-weight: 400;
+              font-style: normal;
+              font-size: 10px;
+              color: #FA6466;
+            }
+          }
+        }
+
+        .search-btn{
+          height: 40px;
+          .btn-primary{
+            border-radius: 2px;
+            background-color: #eb776a;
+            padding: 14px 13px;
+          }
+          input{
+            height: 40px;
+            font-size: 16px;
+            letter-spacing: 0.2px;
+            text-transform: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 639px) {
+  #recommend-verdor-show-wrap{
+    text-align: center;
+  }
+}
