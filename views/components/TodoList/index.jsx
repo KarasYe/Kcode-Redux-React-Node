@@ -1,0 +1,29 @@
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Todo from '../Todo/index.jsx';
+
+export default class TodoList extends Component {
+  render() {
+    return (
+      <ul>
+        {
+          this.props.todos.map((todo, index) =>
+            <Todo
+              {...todo}
+              onClick={() => this.props.onTodoClick(index)}
+              key={index}
+            />
+          )
+        }
+      </ul>
+    );
+  }
+}
+
+TodoList.propTypes = {
+  onTodoClick: PropTypes.func.isRequired,
+  todos: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    completed: PropTypes.bool.isRequired
+  }).isRequired).isRequired
+};
