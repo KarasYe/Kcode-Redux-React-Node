@@ -1,5 +1,6 @@
 //ES6
-import React from 'react';
+import React from 'react'
+const $ = require('jquery')
 
 class LikeButton extends React.Component {
 	constructor() {

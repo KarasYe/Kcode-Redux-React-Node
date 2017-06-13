@@ -11,16 +11,20 @@ class ClockDemo extends React.Component {
 		}
 	}
 	componentWillMount() {
-		var func = function() {
+		let func = function() {
 			this.setState({
 				date: new Date()
 			})
 		}.bind(this)
 		func()
-		setInterval(func, 1000)
+		this.inc = setInterval(func, 1000)
 	}
 	componentDidMount() {
 		this.canvasBackground();
+	}
+	componentWillUnmount() { 
+		console.log(this.state.date) 
+		clearInterval(this.inc) 
 	}
 	canvasBackground() {
 		const context = this.refs.canvas.getContext('2d');
@@ -103,5 +107,4 @@ class ClockDemo extends React.Component {
 	}
 }
 
-//导出组件
 export default ClockDemo;
