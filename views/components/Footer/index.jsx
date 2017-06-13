@@ -4,31 +4,27 @@ import PropTypes from 'prop-types';
 export default class Footer extends Component {
   renderFilter(filter, name) {
     if(filter == this.props.filter) {
-      return name;
+      return (
+        <b>{name}</b>
+      );
     }
     return (
-      <a
-        href="#"
-        onClick={e => {
+      <span onClick={e => {
           e.preventDefault();
           this.props.onFilterChange(filter);
         }}>
         {name}
-      </a>
+      </span>
     );
   }
 
   render() {
     return (
       <p>
-        SHOW
-        {' '}
+        SHOW :
         {this.renderFilter('SHOW_ALL', 'All')}
-        {', '}
         {this.renderFilter('SHOW_COMPLETED', 'Completed')}
-        {', '}
         {this.renderFilter('SHOW_ACTIVE', 'Active')}
-        .
       </p>
     );
   }

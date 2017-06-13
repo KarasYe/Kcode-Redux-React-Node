@@ -15,7 +15,7 @@ class CopyInput extends React.Component {
 	}
 	render() {
 		return (
-			<div>
+			<div className="copy-input">
 				<input type="text" value={this.state.value} onChange={this.handleChange.bind(this)} />
 				<p>{this.state.value}</p>
 			</div>
