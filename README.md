@@ -10,7 +10,7 @@ npm run dev
 
 open browser http://localhost:8080/
 
-#node sever
+#node server
 
 you need to change the index.html file "<script src="bundle.js"></script>" => "<script src="/build/bundle.js"></script>"
 
