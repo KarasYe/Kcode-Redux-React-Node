@@ -13,7 +13,7 @@ export default class Todo extends Component {
         }}
       >
         {text}
-        <input type="checkbox" defaultChecked={completed}/>
+        <input type="checkbox" checked={completed}/>
       </li>
     );
   }
