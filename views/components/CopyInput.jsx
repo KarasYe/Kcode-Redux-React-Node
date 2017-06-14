@@ -1,5 +1,5 @@
 //ES6
-import React from 'react';
+import React from 'react'
 
 class CopyInput extends React.Component {
 	constructor() {
@@ -15,12 +15,12 @@ class CopyInput extends React.Component {
 	}
 	render() {
 		return (
-			<div className="copy-input">
-				<input type="text" value={this.state.value} onChange={this.handleChange.bind(this)} />
+			<div className = "copy-input">
+				<input type = "text" value = {this.state.value} onChange = {this.handleChange.bind(this)} />
 				<p>{this.state.value}</p>
 			</div>
-		);
+		)
 	}
 }
 
-export default CopyInput;
+export default CopyInput

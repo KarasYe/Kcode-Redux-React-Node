@@ -1,6 +1,6 @@
 //ES6
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 class AppComponent extends React.Component {
   constructor() {
@@ -17,13 +17,13 @@ class AppComponent extends React.Component {
         left: -200,
         right: 0,
         menuState: 'Open menu'
-      });
+      })
     } else {
       this.setState({
         left: 0,
         right: 200,
         menuState: 'Close menu'
-      });
+      })
     }
   }
   handleClick2() {
@@ -31,24 +31,25 @@ class AppComponent extends React.Component {
       left: -200,
       right: 0,
       menuState: 'Open menu'
-    });
+    })
   }
   render() {
     return (
-      <div className="index">
-        <div className="showList" onClick={this.handleClick.bind(this)}>{this.state.menuState}</div>
-        <nav style={{left: this.state.left +'px'}} onClick={this.handleClick2.bind(this)}>
-          <Link to="/clock">Clock</Link>
-          <Link to="/Todo">TodoList</Link>
-          <Link to="/CopyInput">CopyInput</Link>
-          <Link to="/OtherApp">OtherApp</Link>
+      <div className = "index">
+        <div className = "showList" onClick = {this.handleClick.bind(this)}>{this.state.menuState}</div>
+        <nav style = {{left: this.state.left + 'px'}} onClick = {this.handleClick2.bind(this)}>
+          <Link to = "/clock">Clock</Link>
+          <Link to = "/Todo">TodoList</Link>
+          <Link to = "/CopyInput">CopyInput</Link>
+          <Link to = "/FPT">FPT</Link>
+          <Link to = "/OtherApp">OtherApp</Link>
         </nav>
-        <div className="rightContent" style={{left: this.state.right +'px'}}>
+        <div className = "rightContent" style = {{left: this.state.right + 'px'}}>
         {this.props.children}
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default AppComponent;
+export default AppComponent

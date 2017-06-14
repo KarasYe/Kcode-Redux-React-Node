@@ -1,9 +1,10 @@
 //ES6
-import React from 'react';
+import React from 'react'
+const $ = require('jquery')
 
 class ProductCategoryRow extends React.Component {
 	render() {
-		return (<tr><th colSpan="2">{this.props.category}</th></tr>);
+		return (<tr><th colSpan = "2">{this.props.category}</th></tr>);
 	}
 }
 
@@ -12,17 +13,17 @@ class ProductRow extends React.Component {
 		return (
 			<tr>
 	        <td>
-	          <span className={this.props.product.stocked ? "" :"unstocked"} >
+	          <span className = {this.props.product.stocked ? "" :"unstocked"} >
 	            {this.props.product.name}
 	          </span>
 	        </td>
 	        <td>
-	          <span className={this.props.product.stocked ? "" :"unstocked"} >
+	          <span className = {this.props.product.stocked ? "" :"unstocked"} >
 	            {this.props.product.price}
 	          </span>
 	        </td>
 	      </tr>
-		);
+		)
 	}
 }
 
@@ -46,7 +47,7 @@ class ProductTable extends React.Component {
 			error: function(xhr, status, err) {
 				console.error(this.props.url, status, err.toString());
 			}.bind(this)
-		});
+		})
 	}
 	componentDidMount() {
 		this.loadProducts()
@@ -76,7 +77,7 @@ class ProductTable extends React.Component {
 	        </thead>
 	        <tbody>{rows}</tbody>
 	      </table>
-		);
+		)
 	}
 }
 
@@ -86,39 +87,39 @@ class SearchBar extends React.Component {
 			this.refs.filterTextInput.value,
 			this.refs.inStockOnlyInput.checked,
 			this.refs.notStockOnlyInput.checked
-		);
+		)
 	}
 	render() {
 		return (
 			<form>
-        <input
-          type="text"
-          placeholder="Search..."
-          value={this.props.filterText}
-          ref="filterTextInput"
-          onChange={this.handleChange.bind(this)}
-          className="SearchBar"
-        />
-        <p className="inStockOnly">
-          <input
-            type="checkbox"
-            checked={this.props.inStockOnly}
-            ref="inStockOnlyInput"
-            onChange={this.handleChange.bind(this)}
-          />
-          Hide products in not stock
-        </p>
-        <p className="notStockOnly">
-          <input
-            type="checkbox"
-            checked={this.props.notStockOnly}
-            ref="notStockOnlyInput"
-            onChange={this.handleChange.bind(this)}
-          />
-          Hide products in stock
-        </p>
-      </form>
-		);
+		        <input
+		          type = "text"
+		          placeholder = "Search..."
+		          value = {this.props.filterText}
+		          ref = "filterTextInput"
+		          onChange = {this.handleChange.bind(this)}
+		          className = "SearchBar"
+		        />
+		        <p className = "inStockOnly">
+		          <input
+		            type = "checkbox"
+		            checked = {this.props.inStockOnly}
+		            ref = "inStockOnlyInput"
+		            onChange = {this.handleChange.bind(this)}
+		          />
+		          Hide products in not stock
+		        </p>
+		        <p className = "notStockOnly">
+		          <input
+		            type = "checkbox"
+		            checked = {this.props.notStockOnly}
+		            ref = "notStockOnlyInput"
+		            onChange = {this.handleChange.bind(this)}
+		          />
+		          Hide products in stock
+		        </p>
+	        </form>
+		)
 	}
 }
 
@@ -131,12 +132,12 @@ class CategorySelect extends React.Component {
 	}
 	render() {
 		return (
-			<select ref="selected" onChange={this.handleChange.bind(this)}>
+			<select ref = "selected" onChange = {this.handleChange.bind(this)}>
 		        <option>All</option>
 		        <option>Sporting Goods</option>
 		        <option>Electronics</option>
 		      </select>
-		);
+		)
 	}
 }
 
@@ -156,38 +157,38 @@ class FilterableProductTable extends React.Component {
 			filterText: filterText,
 			inStockOnly: inStockOnly,
 			notStockOnly: notStockOnly
-		});
+		})
 	}
 
 	handleUserSelect(selectedCategory) {
 		this.setState({
 			selectedCategory: selectedCategory
-		});
+		})
 	}
 
 	render() {
 		return (
-			<div>
-	        <SearchBar
-	          filterText={this.state.filterText}
-	          inStockOnly={this.state.inStockOnly}
-	          notStockOnly={this.state.notStockOnly}
-	          onUserInput={this.handleUserInput.bind(this)}
-	        />
-	        <CategorySelect
-	         selectedCategory={this.state.selectedCategory} 
-	         onUserSelect={this.handleUserSelect.bind(this)}
-	        />
-	        <ProductTable
-	          url="./json/products.json" 
-	          filterText={this.state.filterText}
-	          inStockOnly={this.state.inStockOnly}
-	          notStockOnly={this.state.notStockOnly}
-	          selectedCategory = {this.state.selectedCategory}
-	        />
-	      </div>
-		);
+			<div className = "fpt">
+		        <SearchBar
+		          filterText = {this.state.filterText}
+		          inStockOnly = {this.state.inStockOnly}
+		          notStockOnly = {this.state.notStockOnly}
+		          onUserInput = {this.handleUserInput.bind(this)}
+		        />
+		        <CategorySelect
+		         selectedCategory = {this.state.selectedCategory} 
+		         onUserSelect = {this.handleUserSelect.bind(this)}
+		        />
+		        <ProductTable
+		          url = "./json/products.json" 
+		          filterText = {this.state.filterText}
+		          inStockOnly = {this.state.inStockOnly}
+		          notStockOnly = {this.state.notStockOnly}
+		          selectedCategory = {this.state.selectedCategory}
+		        />
+	      	</div>
+		)
 	}
 }
 
-export default FilterableProductTable;
+export default FilterableProductTable
