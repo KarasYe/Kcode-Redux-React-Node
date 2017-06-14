@@ -1,19 +1,40 @@
-# Kcode-Redux-React-Node
-
 # Redux-React-Node
 
-npm install
+* Make sure your [node](https://nodejs.org/en/) version v7.6.0 or more and npm version 4.1.2 or more
 
-#webpack-dev-server
+```
+git clone https://github.com/KarasYe/Kcode-Redux-React-Node.git
+```
 
-npm run dev
+```
+1. npm install
+```
 
-open browser http://localhost:8080/
+## webpack-dev-server
 
-#node server
+```
+2. npm run dev
+```
 
-you need to change the index.html file "<script src="bundle.js"></script>" => "<script src="/build/bundle.js"></script>"
+3. open http://localhost:8080/ on browser and switch mobile mode (shift + ctrl + m)
 
-npm start
+![](https://github.com/KarasYe/Kcode-Redux-React-Node/blob/master/public/images/karasLogo.jpg)
 
-http://localhost:3000/
+## node server
+
+you need to change the index.html file:
+
+```javascript
+<script src="/build/bundle.js"></script>
+```
+to replace
+
+```javascript
+<script src="bundle.js"></script>
+```
+
+```
+2. npm start
+```
+
+3. open http://localhost:3000/ on browser and switch mobile mode (shift + ctrl + m)
