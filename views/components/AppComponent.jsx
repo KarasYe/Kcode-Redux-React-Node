@@ -11,38 +11,35 @@ class AppComponent extends React.Component {
       imgWidth: '20%',
       menuState: false
     }
-  }
-  handleClick() {
-    if (this.state.left === 0) {
-      this.setState({
-        left: -200,
-        right: 0,
-        imgWidth: '20%',
-        menuState: false
-      })
-    } else {
-      this.setState({
+    this.openMenu = {
         left: 0,
         right: 200,
         imgWidth: '66.6%',
         menuState: true
-      })
+    }
+    this.closeMenu = {
+        left: -200,
+        right: 0,
+        imgWidth: '20%',
+        menuState: false
+    }
+  }
+  handleClick() {
+    if (this.state.left === 0) {
+      this.setState(this.closeMenu)
+    } else {
+      this.setState(this.openMenu)
     }
   }
   handleClick2() {
-    this.setState({
-      left: -200,
-      right: 0,
-      imgWidth: '20%',
-      menuState: false
-    })
+    this.setState(this.closeMenu)
   }
   render() {
     let menu = [];
     if (this.state.menuState) {
       menu.push(
         <div key = "menu-down">  
-          <span className = "glyphicon glyphicon-menu-down">
+          <span className = "glyphicon glyphicon-chevron-down">
           </span>
           <span>
             Close menu
@@ -52,7 +49,7 @@ class AppComponent extends React.Component {
     } else {
       menu.push(
         <div key = "menu-hamburger">
-          <span className = "glyphicon glyphicon-menu-hamburger">
+          <span className = "glyphicon glyphicon-chevron-up">
           </span>
           <span>
             Open menu
