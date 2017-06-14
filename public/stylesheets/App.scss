@@ -46,12 +46,14 @@ a {
 }
 
 .index {
+        border-bottom: 2px solid #eee;
     img {
         margin: 25px auto;
         max-width: 268px;
         border-radius: 50%;
         background: #fff;
         display: block;
+        border: 2px solid #eee;
         -webkit-transition: all .45s cubic-bezier(.23, 1, .32, 1) 0ms;
         transition: all .45s cubic-bezier(.23, 1, .32, 1) 0ms;
     }
@@ -245,6 +247,7 @@ li.clicked {
         font-size: 24px;
         margin-left: 25px;
         overflow: hidden;
+        margin-bottom: 25px;
         span {
             float: left;
         } 
@@ -257,7 +260,6 @@ li.clicked {
         height: 100%;
         -webkit-transition: all .45s cubic-bezier(.23, 1, .32, 1) 0ms;
         transition: all .45s cubic-bezier(.23, 1, .32, 1) 0ms;
-        margin-top: 25px;
         a {
             display: block;
             text-align: center;
