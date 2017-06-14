@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export default class Todo extends Component {
   render() {
     const { onClick, completed, text } = this.props;
     return (
       <li
-        onClick={onClick}
-        style={{
+        onClick = {onClick}
+        style = {{
           textDecoration: completed ? 'line-through' : 'none',
           cursor: completed ? 'default' : 'pointer'
         }}
       >
         {text}
-        <input type="checkbox" checked={completed}/>
+        <input type = "checkbox" checked = {completed}/>
       </li>
-    );
+    )
   }
 }
 
@@ -23,4 +23,4 @@ Todo.propTypes = {
   onClick: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
   completed: PropTypes.bool.isRequired
-};
+}

@@ -1,5 +1,5 @@
 //ES6
-import React from 'react';
+import React from 'react'
 
 class ClockDemo extends React.Component {
 	constructor() {
@@ -20,7 +20,7 @@ class ClockDemo extends React.Component {
 		this.inc = setInterval(func, 1000)
 	}
 	componentDidMount() {
-		this.canvasBackground();
+		this.canvasBackground()
 	}
 	componentWillUnmount() { 
 		console.log(this.state.date) 
@@ -31,23 +31,19 @@ class ClockDemo extends React.Component {
 		let canvas_width = this.state.width;
 		let canvas_height = this.state.height;
 		let radius = Math.min(canvas_width / 2 - 3, canvas_height / 2 - 3);
-		//初始化画布
+		//init
 		context.save();
 		context.clearRect(0, 0, canvas_width, canvas_height);
 		context.translate(canvas_width / 2, canvas_height / 2);
 		context.rotate(-Math.PI / 2);
 		context.save();
 
-		//表框
-
-
-		//小时刻度
-		context.strokeStyle = "#fff";
-		context.fillStyle = "#fff";
+		context.strokeStyle = "#ef4a4a";
+		context.fillStyle = "#ef4a4a";
 		context.lineWidth = 4;
 		context.lineCap = "round";
 		context.beginPath();
-		for (var i = 0; i < 12; i++) {
+		for (let i = 0; i < 12; i++) {
 			context.rotate(Math.PI / 6);
 			context.moveTo(radius - 30, 0);
 			context.lineTo(radius - 10, 0);
@@ -57,12 +53,11 @@ class ClockDemo extends React.Component {
 		context.restore();
 		context.save();
 
-		//分钟刻度
-		context.strokeStyle = "gray";
+		context.strokeStyle = "#ededed";
 		context.fillStyle = "#fff";
 		context.lineWidth = 2;
 		context.beginPath();
-		for (var i = 0; i < 60; i++) {
+		for (let i = 0; i < 60; i++) {
 			if (!(i % 5 == 0)) {
 				context.moveTo(radius - 15, 0);
 				context.lineTo(radius - 10, 0);
@@ -84,27 +79,27 @@ class ClockDemo extends React.Component {
 		context.restore();
 	}
 	render() {
-		var date = this.state.date
-		var minutes = date.getMinutes()
-		var seconds = date.getSeconds()
-		var hours = date.getHours()
-		var clockTime = date.toLocaleTimeString()
-		var hour = (hours) % 12 * (360 / 12) + (360 / 12) * (minutes / 60)
-		var minute = minutes * (360 / 60) + (360 / 60) * (seconds / 60)
-		var second = seconds * (360 / 60)
+		let date = this.state.date
+		let minutes = date.getMinutes()
+		let seconds = date.getSeconds()
+		let hours = date.getHours()
+		let clockTime = date.toLocaleTimeString()
+		let hour = (hours) % 12 * (360 / 12) + (360 / 12) * (minutes / 60)
+		let minute = minutes * (360 / 60) + (360 / 60) * (seconds / 60)
+		let second = seconds * (360 / 60)
 		return (
-			<div className="style">
+			<div className = "style">
         		
-        		<canvas ref="canvas" width={this.state.width} height={this.state.height}></canvas>
-		        <div className="container">
-		          <div className="clockMinuteLine" style={{transform: 'rotateZ('+ minute +'deg)'}}></div>
-		          <div className="clockHourLine" style={{transform:  'rotateZ('+ hour +'deg)'}}></div>
-		          <div className="clockSecondLine" style={{transform: 'rotateZ('+ second +'deg)'}}></div>
+        		<canvas ref = "canvas" width = {this.state.width} height = {this.state.height}></canvas>
+		        <div className = "container">
+		          <div className = "clockMinuteLine" style = {{transform: 'rotateZ('+ minute +'deg)'}}></div>
+		          <div className = "clockHourLine" style = {{transform:  'rotateZ('+ hour +'deg)'}}></div>
+		          <div className = "clockSecondLine" style = {{transform: 'rotateZ('+ second +'deg)'}}></div>
 		        </div>
-		        <div className="clock"><h1>{clockTime}</h1></div>
+		        <div className = "clock"><h1>{clockTime}</h1></div>
       		</div>
 		)
 	}
 }
 
-export default ClockDemo;
+export default ClockDemo

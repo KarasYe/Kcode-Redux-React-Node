@@ -14,13 +14,13 @@ module.exports = {
         loaders: [{
             test: /\.(js|jsx)$/,
             exclude: /node_modules/,
-            loader: 'babel'
+            loader: 'babel-loader'
         }, {
             test: /\.css$/,
-            loader: "style!css"
+            loader: "style-loader!css-loader"
         }, {
             test: /\.scss$/,
-            loader: "style!css!sass"
+            loader: "style-loader!css-loader!sass-loader"
         }]
     },
 
