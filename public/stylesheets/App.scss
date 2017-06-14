@@ -7,51 +7,58 @@ body {
     margin: 20px auto;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 a {
     color: #ef4a4a;
 }
-
-nav {
-    background-color: #fff;
-    width: 200px;
-    left: -200px;
-    position: absolute;
-    height: 100%;
-    -webkit-transition: all .45s cubic-bezier(.23, 1, .32, 1) 0ms;
-    transition: all .45s cubic-bezier(.23, 1, .32, 1) 0ms;
-    a {
-        display: block;
-        text-align: center;
-        padding: 20px 0;
-        text-decoration: none;
-        font-size: 18px;
-        font-weight: bold;
-        border-bottom: 1px solid #eee;
-    }
-}
-
 .rightContent {
-    width: 100%!important;
+    width: 100%;
     left: 0;
     position: absolute;
-    height: 100%;
     -webkit-transition: all .45s cubic-bezier(.23, 1, .32, 1) 0ms;
     transition: all .45s cubic-bezier(.23, 1, .32, 1) 0ms;
-    overflow: scroll;
+    main {
+        .like,
+        .unlike {
+            width: 50px;
+            height: 50px;
+            background: green;
+            border-radius: 50%;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            display: inline-block;
+            margin: 20px;
+        }
+        span.unlike {
+            background: red;
+        }
+        .likeContent {
+            text-align: center;
+        }
+    }
 }
 
 .hide {
     display: none;
 }
 
-.index img {
-    margin: 40px auto;
-    border-radius: 4px;
-    background: #fff;
-    display: block;
+.index {
+    img {
+        margin: 25px auto;
+        max-width: 268px;
+        border-radius: 50%;
+        background: #fff;
+        display: block;
+        -webkit-transition: all .45s cubic-bezier(.23, 1, .32, 1) 0ms;
+        transition: all .45s cubic-bezier(.23, 1, .32, 1) 0ms;
+    }
+    span {
+        margin-right: 10px;
+        line-height: 30px;
+    }
 }
 
 .index .notice {
@@ -97,6 +104,7 @@ canvas {
     display: flex;
     position: relative;
     padding: 0;
+    width: auto;
     div {
         position: absolute;
         left: 0;
@@ -187,146 +195,12 @@ h2.Clock sub {
     top: 300px;
 }
 
-.like,
-.unlike {
-    width: 50px;
-    height: 50px;
-    background: green;
-    border-radius: 50%;
-    color: #fff;
-    text-align: center;
-    line-height: 50px;
-    display: inline-block;
-}
-
-span.unlike {
-    float: right;
-    background: red;
-}
-
-p.likeContent {
-    text-align: center;
-}
-
 li.clicked {
     color: #eee;
 }
-
-.todo {
-    margin: 40px auto;
-    padding: 0 25px;
-    input {
-        width: 100%;
-        display: block;
-        height: 25px;
-        margin: 0 auto 10px;
-        padding: 0 5px;
-        font-size: 16px;
-    }
-    button {
-        width: 30%;
-        height: 25px;
-        background: #ef4a4a;
-        border: none;
-        font-size: 14px;
-        border-radius: 2px;
-        padding: 0;
-        margin: 0 auto;
-        display: block;
-    }
-    ul {
-        padding-left: 27px;
-        li {
-            input {
-                float: right;
-                width: auto;
-                height: auto;
-                margin: 0;
-            }
-        }
-    }
-    p {
-        span {
-            padding: 0 5px;
-        }
-        b {
-            color: #ef4a4a;
-            font-size: 20px;
-            padding: 0 5px;
-        }
-    }
-}
-
-.showList {
-    border-bottom: 1px solid #fff;
-    padding-left: 25px;
-    padding-bottom: 20px;
-    font-weight: bold;
-}
-
-.copy-input {
-    margin: 40px auto;
-    padding: 0 25px;
-    input {
-        width: 100%;
-        display: block;
-        height: 25px;
-        margin: 0 auto 10px;
-        padding: 0 5px;
-        font-size: 16px;
-        color: #333;
-    }
-    p {
-        font-size: 16px;
-        color: #ef4a4a;
-        padding: 0 5px;
-    }
-}
-
-.fpt {
-    text-align: center;
-    margin: 25px auto;
-    padding: 0 25px;
-    form {
-        margin: 20px auto;
-    }
-    select {
-        width: 30%;
-        min-width: 200px;
-        max-width: 300px;
-        height: 25px;
-        background: #ef4a4a;
-        border: none;
-        font-size: 14px;
-        border-radius: 2px;
-        padding: 0;
-        margin: 0 auto;
-        display: block;
-    }
-    table {
-        margin: 50px 0;
-        width: 100%;
-        text-align: left;
-        font-size: 16px;
-    }
-}
-
-
 /*desktop*/
 
 @media screen and (min-width: 768px) {
-    p.inStockOnly,
-    p.notStockOnly {
-        float: right;
-        margin: 0;
-        text-align: left;
-    }
-    input.SearchBar {
-        width: 50%;
-        padding: 6px 3px;
-        border: 1px solid #eee;
-        color: #333;
-    }
     #container select {
         margin: 20px auto;
     }
@@ -367,25 +241,158 @@ li.clicked {
         overflow: hidden;
         text-align: left;
     }
+    .bs-glyphicons {
+        font-size: 24px;
+        margin-left: 25px;
+        overflow: hidden;
+        span {
+            float: left;
+        } 
+    }
+    nav {
+        background-color: #fff;
+        width: 200px;
+        left: -200px;
+        position: absolute;
+        height: 100%;
+        -webkit-transition: all .45s cubic-bezier(.23, 1, .32, 1) 0ms;
+        transition: all .45s cubic-bezier(.23, 1, .32, 1) 0ms;
+        margin-top: 25px;
+        a {
+            display: block;
+            text-align: center;
+            padding: 20px 0;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 1px solid #eee;
+        }
+    }
+    .todo {
+        margin: 40px auto;
+        padding: 0 25px;
+        input {
+            width: auto;
+            min-width: 300px;
+            display: inline-block;
+            height: 35px;
+            margin: 0 auto 10px;
+            padding: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+        button {
+            width: 30%;
+            max-width: 150px;
+            height: 35px;
+            background: #ef4a4a;
+            border: none;
+            font-size: 14px;
+            border-radius: 2px;
+            padding: 0;
+            margin-left: 50px;
+        }
+        ul {
+            padding-left: 27px;
+            li {
+                input {
+                    float: right;
+                    width: auto;
+                    height: auto;
+                    margin: 0;
+                }
+            }
+        }
+        p {
+            span {
+                padding: 0 5px;
+            }
+            b {
+                color: #ef4a4a;
+                font-size: 20px;
+                padding: 0 5px;
+            }
+        }
+    }
+
+    .showList {
+        border-bottom: 1px solid #fff;
+        padding-left: 25px;
+        padding-bottom: 20px;
+        font-weight: bold;
+    }
+
+    .copy-input {
+        margin: 40px auto;
+        padding: 0 25px;
+        input {
+            width: 100%;
+            display: block;
+            height: 25px;
+            margin: 0 auto 10px;
+            padding: 0 5px;
+            font-size: 16px;
+            color: #333;
+        }
+        p {
+            font-size: 16px;
+            color: #ef4a4a;
+            padding: 0 5px;
+        }
+    }
+
+    .fpt {
+        text-align: center;
+        margin: 25px auto;
+        max-width: 600px;
+        form {
+            margin: 20px auto;
+            overflow: hidden;
+            input.SearchBar {
+                width: 50%;
+                max-width: 255px;
+                padding: 6px 3px;
+                border: 1px solid #eee;
+                color: #333;
+                float: left;
+            }
+            p.inStockOnly,
+            p.notStockOnly {
+                float: left;
+                margin: 6px 10px;
+                text-align: left;
+                input {
+                    margin: 5px;
+                    float: left;
+                }
+            }
+        }
+        select {
+            width: 30%;
+            min-width: 200px;
+            max-width: 300px;
+            height: 25px;
+            background: #ef4a4a;
+            border: none;
+            font-size: 14px;
+            border-radius: 2px;
+            padding: 0;
+            margin: 0 auto;
+            display: block;
+        }
+        table {
+            margin: 50px 0;
+            width: 100%;
+            text-align: left;
+            font-size: 16px;
+        }
+    }
 }
 
 
 /*mobile*/
 
 @media screen and (max-width: 767px) {
-    p.inStockOnly,
-    p.notStockOnly {
-        float: none;
-        margin: 20px auto;
-        text-align: left;
-    }
-    input.SearchBar {
-        width: 100%;
-        max-width: 360px;
-        padding: 6px;
-        border: 1px solid #eee;
-        color: #333;
-    }
     #container select {
         margin: 0px auto 20px;
     }
@@ -426,5 +433,147 @@ li.clicked {
     }
     form.commentForm {
         text-align: right;
+    }
+    .bs-glyphicons {
+        font-size: 24px;
+        margin: 0 25px;
+        overflow: hidden;
+        span {
+            padding: 5px;
+            float: left;
+        }
+    }
+    nav {
+        background-color: #fff;
+        width: 200px;
+        left: -200px;
+        position: absolute;
+        height: 100%;
+        -webkit-transition: all .45s cubic-bezier(.23, 1, .32, 1) 0ms;
+        transition: all .45s cubic-bezier(.23, 1, .32, 1) 0ms;
+        a {
+            display: block;
+            text-align: center;
+            padding: 10px 0;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 1px solid #eee;
+        }
+    }
+    .todo {
+        margin: 40px auto;
+        padding: 0 25px;
+        input {
+            width: 100%;
+            display: block;
+            height: 35px;
+            margin: 0 auto 10px;
+            padding: 5px;
+            font-size: 16px;
+            color: #333;
+        }
+        button {
+            width: 30%;
+            height: 35px;
+            background: #ef4a4a;
+            border: none;
+            font-size: 14px;
+            border-radius: 2px;
+            padding: 0;
+            margin: 0 auto;
+            display: block;
+        }
+        ul {
+            padding-left: 27px;
+            li {
+                input {
+                    float: right;
+                    width: auto;
+                    height: auto;
+                    margin: 0;
+                }
+            }
+        }
+        p {
+            span {
+                padding: 0 5px;
+            }
+            b {
+                color: #ef4a4a;
+                font-size: 20px;
+                padding: 0 5px;
+            }
+        }
+    }
+
+    .showList {
+        border-bottom: 1px solid #fff;
+        padding-left: 25px;
+        padding-bottom: 20px;
+        font-weight: bold;
+    }
+
+    .copy-input {
+        margin: 40px auto;
+        padding: 0 25px;
+        input {
+            width: 100%;
+            display: block;
+            height: 25px;
+            margin: 0 auto 10px;
+            padding: 0 5px;
+            font-size: 16px;
+            color: #333;
+        }
+        p {
+            font-size: 16px;
+            color: #ef4a4a;
+            padding: 0 5px;
+        }
+    }
+
+    .fpt {
+        text-align: center;
+        margin: 25px auto;
+        padding: 0 25px;
+        form {
+            margin: 20px auto;
+            input.SearchBar {
+                width: 100%;
+                max-width: 360px;
+                padding: 6px;
+                border: 1px solid #eee;
+                color: #333;
+            }
+            p.inStockOnly,
+            p.notStockOnly {
+                margin: 6px 10px;
+                text-align: left;
+                input {
+                    margin: 5px;
+                    float: left;
+                }
+            }
+        }
+        select {
+            width: 30%;
+            min-width: 200px;
+            max-width: 300px;
+            height: 25px;
+            background: #ef4a4a;
+            border: none;
+            font-size: 14px;
+            border-radius: 2px;
+            padding: 0;
+            margin: 0 auto;
+            display: block;
+        }
+        table {
+            margin: 50px 0;
+            width: 100%;
+            text-align: left;
+            font-size: 16px;
+        }
     }
 }
