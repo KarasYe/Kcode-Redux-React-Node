@@ -47,15 +47,15 @@ class LikeButton extends React.Component {
 	render() {
 		let text = this.state.liked ? 'liked' : 'haven\'t liked';
 		return (
-			<div>
-	        <p className="likeContent">
+			<div className="likeContent">
+	        <p>
 	          You {text} this.
 	        </p>
-		<div style={{height: '100px'}}>
-	        <span className = "like" onClick = {this.handleClick.bind(this)}>{this.state.count}</span>
-	        <span className = "unlike" onClick = {this.handleClick2.bind(this)}>{this.state.count2}</span>
+					<div>
+		        <span className = "like" onClick = {this.handleClick.bind(this)}>{this.state.count}</span>
+		        <span className = "unlike" onClick = {this.handleClick2.bind(this)}>{this.state.count2}</span>
 	        </div>
-	      </div>
+	    </div>
 		)
 	}
 }
@@ -98,7 +98,8 @@ class RepoList extends React.Component {
 				<main>
 		          <p style = {{textAlign: 'center'}}>Most Popular JavaScript Projects in Github</p>
 		          <ol>{repoList}</ol>
-        		</main>
+							<LikeButton />	
+        </main>
 			);
 		}
 	}
@@ -108,9 +109,7 @@ class OtherApp extends React.Component {
 	render() {
 		return (
 			<div>
-				<RepoList promise = {$.getJSON('https://api.github.com/search/repositories?q=javascript&sort=stars')} />
-				<Ass />
-				<LikeButton />				
+				<RepoList promise = {$.getJSON('https://api.github.com/search/repositories?q=javascript&sort=stars')} />			
 			</div>
 		);
 	}

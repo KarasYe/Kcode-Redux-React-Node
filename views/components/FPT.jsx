@@ -107,7 +107,7 @@ class SearchBar extends React.Component {
 		            ref = "inStockOnlyInput"
 		            onChange = {this.handleChange.bind(this)}
 		          />
-		          Hide products in not stock
+		          stock
 		        </p>
 		        <p className = "notStockOnly">
 		          <input
@@ -116,7 +116,7 @@ class SearchBar extends React.Component {
 		            ref = "notStockOnlyInput"
 		            onChange = {this.handleChange.bind(this)}
 		          />
-		          Hide products in stock
+		          not stock
 		        </p>
 	        </form>
 		)
