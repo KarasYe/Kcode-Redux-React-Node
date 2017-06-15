@@ -22,17 +22,6 @@ git clone https://github.com/KarasYe/Kcode-Redux-React-Node.git
 
 ## node server
 
-you need to change the index.html file:
-
-```javascript
-<script src="/build/bundle.js"></script>
-```
-to replace
-
-```javascript
-<script src="bundle.js"></script>
-```
-
 ```
 2. npm start
 ```

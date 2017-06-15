@@ -1,5 +1,6 @@
 //webpack.config.js
-const webpack = require('webpack');
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     devtool: 'eval-source-map',
@@ -21,11 +22,17 @@ module.exports = {
         }, {
             test: /\.scss$/,
             loader: "style-loader!css-loader!sass-loader"
+        }, {
+            test: /\.jade$/,
+            loader: 'jade-loader'
         }]
     },
 
     plugins: [
         new webpack.HotModuleReplacementPlugin(), //HotModuleReplacement
+        new HtmlWebpackPlugin({
+            template: 'views/index.jade'
+        })
     ],
 
     devServer: {

@@ -19,15 +19,15 @@ app.use(convert(logger()));
 app.use(require('koa-static')(__dirname + '/'));
 
 app.use(views(__dirname + '/views', {
-	extension: 'jade'
+  extension: 'jade'
 }));
 
 // logger
 app.use(async(ctx, next) => {
-	const start = new Date();
-	await next();
-	const ms = new Date() - start;
-	console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
+  const start = new Date();
+  await next();
+  const ms = new Date() - start;
+  console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
 });
 
 router.use('/', index.routes(), index.allowedMethods());
@@ -37,8 +37,8 @@ app.use(router.routes(), router.allowedMethods());
 // response
 
 app.on('error', function(err, ctx) {
-	console.log(err)
-	logger.error('server error', err, ctx);
+  console.log(err)
+  logger.error('server error', err, ctx);
 });
 
 
