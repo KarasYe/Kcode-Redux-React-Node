@@ -200,6 +200,23 @@ h2.Clock sub {
 li.clicked {
     color: #eee;
 }
+.not-found {
+    text-align: center;
+    h1 {
+        color: #fff;
+        background: #ef4a4a;
+        font-size: 50px;
+        width: 100px;
+        height: 100px;
+        line-height: 2;
+        margin: 50px auto;
+        border-radius: 50%;
+    }
+    p {
+        margin: 10px 25px;
+        font-size: 30px;
+    }
+}
 /*desktop*/
 
 @media screen and (min-width: 768px) {

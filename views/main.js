@@ -38,11 +38,11 @@ const routes = (
             <Switch>
                 <Route exact path = "/" component = {Todo}/>
                 <Route path = "/Todo" component = {Todo}/>
-				<Route path = "/clock" component = {ClockDemo}/>
-				<Route path = "/CopyInput" component = {CopyInput}/>
-				<Route path = "/FPT" component = {FilterableProductTable}/>
-				<Route path = "/OtherApp" component = {OtherApp}/>
-				<Route path = "*" component = {NotFound} />
+								<Route path = "/clock" component = {ClockDemo}/>
+								<Route path = "/CopyInput" component = {CopyInput}/>
+								<Route path = "/FPT" component = {FilterableProductTable}/>
+								<Route path = "/OtherApp" component = {OtherApp}/>
+								<Route path = "*" component = {NotFound} />
             </Switch>
         </AppComponent> 
     </Router>
