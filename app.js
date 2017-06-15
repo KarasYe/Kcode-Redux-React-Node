@@ -11,6 +11,7 @@ const logger = require('koa-logger');
 
 const index = require('./routes/index');
 const users = require('./routes/users');
+process.env.NODE_ENV = 'production';
 
 // middlewares
 app.use(convert(bodyparser));
@@ -21,19 +22,26 @@ app.use(require('koa-static')(__dirname + '/'));
 app.use(views(__dirname + '/views', {
   extension: 'jade'
 }));
-
+console.log(process.env.NODE_ENV);
 // logger
 app.use(async(ctx, next) => {
   const start = new Date();
   await next();
+
+  ctx.state = {
+    title: 'Karas',
+    _env: process.env.NODE_ENV
+  };
+  await ctx.render('index', {});
+
   const ms = new Date() - start;
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
 });
 
-router.use('/', index.routes(), index.allowedMethods());
-router.use('/users', users.routes(), users.allowedMethods());
+//router.use('/', index.routes(), index.allowedMethods());
+//router.use('/users', users.routes(), users.allowedMethods());
 
-app.use(router.routes(), router.allowedMethods());
+//app.use(router.routes(), router.allowedMethods());
 // response
 
 app.on('error', function(err, ctx) {
