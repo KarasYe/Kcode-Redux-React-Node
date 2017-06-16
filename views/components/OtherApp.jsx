@@ -84,9 +84,9 @@ class RepoList extends React.Component {
 
 	render() {
 		if (this.state.loading) {
-			return <span>Loading...</span>;
+			return <div>Loading...</div>;
 		} else if (this.state.error !== null) {
-			return <span>Error: {this.state.error.message}</span>;
+			return <div>Error: {this.state.error.message}</div>;
 		} else {
 			let repos = this.state.data.items;
 			let repoList = repos.map(function(repo, index) {
