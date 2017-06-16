@@ -26,6 +26,7 @@ import ClockDemo from './components/Clock.jsx'
 import CopyInput from './components/CopyInput.jsx'
 import OtherApp from './components/OtherApp.jsx'
 import FilterableProductTable from './components/FPT.jsx'
+import CommentContainer from './components/Comment.jsx'
 import NotFound from './components/NotFound'
 //
 import configureStore from './stores/configureStore'
@@ -41,6 +42,7 @@ const routes = (
 								<Route path = "/clock" component = {ClockDemo}/>
 								<Route path = "/CopyInput" component = {CopyInput}/>
 								<Route path = "/FPT" component = {FilterableProductTable}/>
+								<Route path = "/Comment" component = {CommentContainer}/>
 								<Route path = "/OtherApp" component = {OtherApp}/>
 								<Route path = "*" component = {NotFound} />
             </Switch>

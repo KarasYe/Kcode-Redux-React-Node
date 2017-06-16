@@ -17,9 +17,12 @@ a {
     width: 100%;
     left: 0;
     position: absolute;
+    text-align: center;
     -webkit-transition: all .45s cubic-bezier(.23, 1, .32, 1) 0ms;
     transition: all .45s cubic-bezier(.23, 1, .32, 1) 0ms;
     main {
+        margin: 25px;
+        text-align: left;
         .like,
         .unlike {
             width: 50px;

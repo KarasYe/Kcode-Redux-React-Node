@@ -49,7 +49,7 @@ class AppComponent extends React.Component {
     } else {
       menu.push(
         <div key = "menu-hamburger">
-          <span className = "glyphicon glyphicon-chevron-up">
+          <span className = "glyphicon glyphicon-menu-hamburger">
           </span>
           <span>
             Open menu
@@ -68,6 +68,7 @@ class AppComponent extends React.Component {
           <Link to = "/Todo">TodoList</Link>
           <Link to = "/CopyInput">CopyInput</Link>
           <Link to = "/FPT">FPT</Link>
+          <Link to = "/Comment">Comment</Link>
           <Link to = "/OtherApp">OtherApp</Link>
           <Link to = "https://github.com/KarasYe/Kcode-Redux-React-Node" className = "github" target = "_blank">@GitHub</Link>
         </nav>
